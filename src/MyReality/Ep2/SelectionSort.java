@@ -4,18 +4,26 @@ import edu.princeton.cs.algs4.StdOut;
 
 import java.util.Scanner;
 
-public class ExampleSelection
+public class SelectionSort
 {
     /**
      * @Version: V1.0
      * @Author: Saw96x
-     * @ClassName: ExampleSelection
-     * @Description: 选择算法的模板。
-     * @Data: 17:15 2020/5/22
+     * @ClassName: SelectionSort
+     * @Description: 选择排序。
+     * @Data: 17:49 2020/5/22
      **/
     public static void sort(Comparable[] a)
-    {
-
+    {//升序排列
+        int n = a.length;
+        for (int i = 0; i < n; i++)
+        {
+            int min = i;         //最小元素的索引
+            for (int j = i + 1; j < n; j++)                 //筛选出最小的元素。
+                if (less(a[j], a[min]))
+                    min = j;
+            swap(a, i, min);               //交换当前的元素与最小的元素。
+        }
     }
 
     private static boolean less(Comparable v, Comparable t)
@@ -38,7 +46,7 @@ public class ExampleSelection
          * @Name swap
          * @Author Saw96x
          * @Version 1.0
-         * @Description  交换数组中的元素。
+         * @Description 交换数组中的元素。
          * @Date 17:16 2020/5/22
          * @Param [a, i, j]
          * @Return void
