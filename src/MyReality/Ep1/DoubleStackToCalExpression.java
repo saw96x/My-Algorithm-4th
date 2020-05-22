@@ -3,6 +3,7 @@ package MyReality.Ep1;
 import edu.princeton.cs.algs4.*;
 
 import java.util.Scanner;
+
 /**
  * @Version: V1.0
  * @Author: Saw96x
@@ -14,13 +15,14 @@ public class DoubleStackToCalExpression
 {
     public static void main(String[] args)
     {
-        String expression1 = "( 1 + ( ( 2 + 3 ) * ( 4 * 5 ) ) )";
+        Scanner in = new Scanner(System.in);
+        String expression1 = in.nextLine();
         System.out.print(Cal(expression1));
     }
 
     public static double Cal(String s)
     {
-        String[] StringArray = s.split(" ");
+        String[] StringArray = s.split("");
         var ops = new Stack<String>();
         var values = new Stack<Double>();
         for (String read : StringArray)

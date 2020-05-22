@@ -4,7 +4,7 @@ import edu.princeton.cs.algs4.StdOut;
 
 import java.util.Scanner;
 
-public class SelectionSort
+public class InsertionSort
 {
     /**
      * @Version: V1.0
@@ -14,15 +14,14 @@ public class SelectionSort
      * @Data: 17:49 2020/5/22
      **/
     public static void sort(Comparable[] a)
-    {//升序排列
+    {
         int n = a.length;
-        for (int i = 0; i < n; i++)
+        for (int i = 1; i < n; i++)
         {
-            int min = i;         //最小元素的索引
-            for (int j = i + 1; j < n; j++)                 //筛选出最小的元素。
-                if (less(a[j], a[min]))
-                    min = j;
-            swap(a, i, min);               //交换当前的元素与最小的元素。
+            for (int j = i - 1; j > 0 && less(a[j], a[j - 1]); j--)
+            {
+                swap(a, j, j-1);
+            }
         }
     }
 

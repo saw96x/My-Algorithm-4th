@@ -38,7 +38,7 @@ public class ExampleSort
          * @Name swap
          * @Author Saw96x
          * @Version 1.0
-         * @Description  交换数组中的元素。
+         * @Description 交换数组中的元素。
          * @Date 17:16 2020/5/22
          * @Param [a, i, j]
          * @Return void
@@ -89,7 +89,7 @@ public class ExampleSort
     {
         Scanner in = new Scanner(System.in);
         String a = in.nextLine();
-        String[] b = a.split(" ");
+        String[] b = a.split("");
         sort(b);
         assert isSorted(b);
         show(b);
