@@ -4,6 +4,13 @@ import java.util.Iterator;
 
 public class LinkedListStack<T> implements Iterable<T>
 {
+    /**
+     * @Version: V1.0
+     * @Author: Saw96x
+     * @ClassName: LinkedListStack
+     * @Description: 链表实现的栈。
+     * @Data: 17:13 2020/5/22
+     **/
     private class Node
     {
         T value;

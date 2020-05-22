@@ -4,6 +4,13 @@ import java.util.Iterator;
 
 public class ResizingArrayStack<T> implements Iterable<T>
 {
+    /**
+     * @Version: V1.0
+     * @Author: Saw96x
+     * @ClassName: ResizingArrayStack
+     * @Description: 用数组实现的栈。
+     * @Data: 17:14 2020/5/22
+     **/
     private T[] values;
         private int size;
 

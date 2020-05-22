@@ -3,12 +3,18 @@ package MyReality.Ep1;
 import edu.princeton.cs.algs4.*;
 
 import java.util.Scanner;
-
-public class DoubleStackToCalExpression_1
+/**
+ * @Version: V1.0
+ * @Author: Saw96x
+ * @ClassName: DoubleStackToCalExpression
+ * @Description: 双栈计算中缀表达式
+ * @Data: 17:08 2020/5/22
+ **/
+public class DoubleStackToCalExpression
 {
     public static void main(String[] args)
     {
-        String expression1="( 1 + ( ( 2 + 3 ) * ( 4 * 5 ) ) )";
+        String expression1 = "( 1 + ( ( 2 + 3 ) * ( 4 * 5 ) ) )";
         System.out.print(Cal(expression1));
     }
 
