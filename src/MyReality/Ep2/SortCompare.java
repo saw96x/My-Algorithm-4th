@@ -11,7 +11,7 @@ public class SortCompare
 {
     public static double time(String alg, Comparable[] a)
     {
-        Stopwatch timer = new Stopwatch();
+        Stopwatch timer = new Stopwatch();//
         if(alg.equals("Selection"))
             SelectionSort.sort(a);
         if(alg.equals("Insertion"))
