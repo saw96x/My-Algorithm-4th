@@ -1,25 +1,44 @@
 package MyReality.Ep2;
 
+import edu.princeton.cs.algs4.Insertion;
+import edu.princeton.cs.algs4.Quick;
 import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StdRandom;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class QuickSort
 {
     public static void sort(Comparable[] a)
     {
-        StdRandom.shuffle(a);
+        StdRandom.shuffle(a);//确保随机性
         sort(a, 0, a.length - 1);
+    }
+
+    private void max(Comparable[] a)
+    {
+        int max = 0;
+        int n = a.length;
+        for (int j = 1; j < n; j++)
+        {
+            if (less(a[max], a[j]))
+                max = j;
+        }
+        swap(a, max, a.length - 1);
     }
 
     private static void sort(Comparable[] a, int lo, int hi)
     {
-        if (lo >= hi)
+        if (hi <= lo + 10)
+        {
+            Insertion.sort(a);
             return;
+        }
         int j = partition(a, lo, hi);
         sort(a, lo, j - 1);
-        sort(a, j+1, hi);
+        sort(a, j + 1, hi);
     }
 
     private static int partition(Comparable[] a, int lo, int hi)
@@ -28,12 +47,8 @@ public class QuickSort
         Comparable v = a[lo];
         while (true)
         {
-            while (less(a[++i], v))
-                if (i == hi)
-                    break;
-            while (less(v, a[--j]))
-                if (j == lo)
-                    break;
+            while (less(a[++i], v)) ;
+            while (less(v, a[--j]));
             if (i >= j)
                 break;
             swap(a, i, j);
