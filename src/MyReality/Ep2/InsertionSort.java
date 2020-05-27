@@ -20,7 +20,7 @@ public class InsertionSort
         {
             for (int j = i - 1; j > 0 && less(a[j], a[j - 1]); j--)
             {
-                swap(a, j, j-1);
+                swap(a, j, j - 1);
             }
         }
     }
